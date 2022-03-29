@@ -1,0 +1,33 @@
+<div class="container">
+  <a routerLink="home">Homepage</a>
+
+  <h2>List student</h2>
+  <a routerLink="/posts-form" class="nav-link mb-3">Add students</a>
+  <table class="table tabel-bordered">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Status</th>
+
+          </tr>
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let po of  Posts">
+              <td>{{po.title}}</td>
+              <td>{{po.content}}</td>
+              <td>{{po.status}}</td>
+
+              <td>
+                  <button class="btn btn-danger" id="btn-remove" (click)="remove(po.id)">remove</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  <!-- add user -->
+  <h2>ADD USERS</h2>
+
+
+</div>

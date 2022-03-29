@@ -1,0 +1,27 @@
+<p>student-form works!</p>
+
+<h3>Add student</h3>
+<form action="" method="post" #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm.value)">
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" [(ngModel)]="newStudent.name" #name="ngModel"
+     id="name"  name="name" placeholder="name" class="form-control" minlength="6">
+  </div>
+<div>
+
+</div>
+  <div class="form-group">
+    <label for="">Class</label>
+    <input type="text" [(ngModel)]="newStudent.class" required
+     #class="ngModel" id="class" name="class" placeholder="class" class="form-control" maxlength="32">
+  </div>
+  <div *ngIf="studentForm.form.dirty" class="text-danger">
+    <p *ngIf="name.errors?.['required']"> Tên không được để trống</p>
+    <p *ngIf="name.errors?.['minlength']"> tên tối thiểu phải là 6 kí tự</p>
+    <p *ngIf="class.errors?.['required']"> class không được để trống</p>
+    <p *ngIf="class.errors?.['maxlength']"> class phải là tối thiểu phải là 6 kí tự</p>
+  </div>
+  <button type="submit"
+  [disabled]="studentForm.form.invalid"
+  class="btn btn-primary">submit</button>
+</form>

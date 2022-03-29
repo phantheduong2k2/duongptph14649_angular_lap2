@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "name": "duong",
+      "class": "hhhf",
+      "id": 5
+    },
+    {
+      "name": "duong",
+      "class": "hhhf",
+      "id": 6
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "title": "dsdsa",
+      "content": "fdfdfd",
+      "status": 0
+    }
+  ]
+}

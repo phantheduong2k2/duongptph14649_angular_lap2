@@ -1,0 +1,30 @@
+<p>Post form</p>
+
+ <form [formGroup]="postForm" (ngSubmit)="onSubmit(postForm.value)">
+   <div class="form-group">
+     <label for="">Title</label>
+     <input type="text" formControlName="title" name="title" id="title" placeholder="title" class="form-control">
+     <div *ngIf="postForm.get('title')?.dirty" class="text-danger">
+       <p *ngIf="postForm.get('title')?.errors?.['required']">tieu de bat buoc nhap</p>
+     </div>
+   </div>
+   <div class="form-group">
+     <label for="">content</label>
+     <input type="text" formControlName="content" id="content" name="content" placeholder="content" class="form-control">
+     <div *ngIf="postForm.get('content')?.dirty" class="text-danger">
+      <p *ngIf="postForm.get('content')?.errors?.['required']">noi dung bat buoc nhap</p>
+    </div>
+   </div> <div *ngIf="postForm.dirty" class="text-danger">
+    <p *ngIf="postForm.get('content')?.errors?.['minlength']">noi dung phai 6 ki tu</p>
+  </div>
+
+   <div class="form-group">
+     <label for="">Status</label>
+     <input type="radio" formControlName="status" value="0" id="status" name="status">
+     <input type="radio" formControlName="status" value="1" id="status" name="status">
+   </div>
+   <div>
+     <button class="btn btn-primary" >sumbit</button>
+   </div>
+ </form>
+

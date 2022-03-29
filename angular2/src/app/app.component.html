@@ -1,0 +1,49 @@
+<!-- view layout -->
+
+<div class="container">
+  <div class="text-center text-danger">ANGULAR 13.</div>
+  <header>
+    <nav class="navbar navbar-expand-sm bg-light">
+
+        <div class="container-fluid">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home">home-page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/product">product-page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user">user-page (fake data)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/students">students (api)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/posts">Post (api)</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+  </header>
+
+  <div class="content row">
+    <app-aside></app-aside>
+
+      <!-- main content -->
+      <main class="col-10">
+        <router-outlet></router-outlet>
+          <!-- content change -->
+
+          <!-- <app-product></app-product> -->
+      </main>
+  </div>
+  <!-- sisdebar -->
+
+<app-footer></app-footer>
+  <!-- footer -->
+
+</div>
